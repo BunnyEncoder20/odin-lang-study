@@ -9,6 +9,8 @@ main :: proc() {
 
 	// appending values
 	i := 10
+
+	// odin's while loops
 	for i <= 50 {
 		append(&dynamic_array, i)
 		i += 10
@@ -32,3 +34,4 @@ main :: proc() {
 		fmt.printfln("A %s has %d sides", key, val)
 	}
 }
+
