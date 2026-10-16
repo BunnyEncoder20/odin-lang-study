@@ -1,0 +1,29 @@
+# Odin build artifacts.
+#
+# `odin` names a binary after the directory it builds, and the name moves
+# depending on how you invoke the compiler:
+#
+#   odin run  loops       -> loops/looping   (binary lands inside the target dir)
+#   odin build loops      -> ./loops.bin     (binary lands in the CWD)
+#   odin build .          -> ./<name of CWD> (when run from inside a dir)
+#   odin build loops/x.odin -> loops/loops    (name of the source file's dir)
+#
+# A bare `loops` pattern would also match the loops/ *source* directory, which
+# makes git skip the whole tree and hide every .odin file inside it. So the
+# binary names are anchored to full paths below.
+#
+# Add a new pair of lines whenever you add a new topic directory.
+*.bin
+*.exe
+
+/constants/constants
+/dynamics/dynamics
+/greeting/greeting
+/hello/hello
+/loops/looping
+/loops/loops
+
+# `odin build .` from the repo root.
+/odin-lang-study
+
+.DS_Store

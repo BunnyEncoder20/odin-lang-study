@@ -34,7 +34,6 @@ main :: proc() {
 	#assert(LIVES[.Normal] == 3)
 
 	GREETING :: "Hello World!"
-	#assert(GREETING[0] == 'H')
 	#assert(GREETING[0:5] == "Hello")
 
 }

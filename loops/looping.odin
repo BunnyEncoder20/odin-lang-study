@@ -20,6 +20,12 @@ main :: proc() {
 		}
 	}
 
+	fmt.println()
+	arr := [?]int{10, 20, 30, 40, 50}
+	#reverse for x in arr {
+		fmt.printf("%d ", x)
+	}
+
 	// This proc uses the dynamic literals (usually not how dynamic memeory is handled, at least at the basic level)
 	iterater_over_builtin_types()
 }
