@@ -1,16 +1,11 @@
 package string_reader
 import "core:bufio"
 import "core:fmt"
-import "core:os"
 import "core:strings"
 
-read_string :: proc() -> (str: string, worked: bool) {
-	reader: bufio.Reader
-	bufio.reader_init(&reader, os.to_stream(os.stdin))
-	defer bufio.reader_destroy(&reader)
-
+read_string :: proc(reader: ^bufio.Reader) -> (str: string, worked: bool) {
 	fmt.print("Enter the string: ")
-	rawString, err := bufio.reader_read_string(&reader, '\n', context.allocator)
+	rawString, err := bufio.reader_read_string(reader, '\n', context.allocator)
 	defer delete(rawString)
 	if err != nil {
 		fmt.eprintln("raw string read error: ", err)
